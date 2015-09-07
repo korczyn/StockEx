@@ -1,4 +1,4 @@
-package stockexchange.utils.test;
+package stockexchange.utils;
 
 import static org.junit.Assert.*;
 
@@ -20,9 +20,12 @@ public class DateConverterTest {
 	}
 	
 	@Test
-	public void testShouldConvertStringTopDate() throws ParseException {
+	public void testShouldConvertStringToDate() throws ParseException {
+		//given
 		String dateString = "20130102";
+		//when
 		Date date = dc.stringToDate(dateString);
+		//then
 		assertEquals("Wed Jan 02 00:00:00 CET 2013", date.toString());
 	}
 }

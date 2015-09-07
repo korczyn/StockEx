@@ -1,4 +1,4 @@
-package stockexchange.utils.test;
+package stockexchange.utils;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -22,21 +22,25 @@ public class FileReaderTest {
 	}
 	
 	@Test
-	public void test() {
+	public void testShouldLoadFile() {
+		//given
 		List<String> result = new ArrayList<String>();
+		//when
 		result = fdr.readFile("C:\\Users\\mkorczyn\\Desktop\\ZadanieGielda\\ZadanieGielda\\testData.csv");
+		//then
 		assertNotNull(result);
 		assertEquals(10, result.size());
 	}
 	
 	@Test
 	public void testShouldReturnStockList(){
+		//given
 		List<String> stockStrings = new ArrayList<String>();
-		stockStrings.add("PKOBP,20130102,37.35");
-
 		List<Stock> stocks = new ArrayList<Stock>();
+		//when
+		stockStrings.add("PKOBP,20130102,37.35");
 		stocks = fdr.convertToStockList(stockStrings);
-		
+		//then
 		assertEquals(1, stocks.size());
 		assertEquals("PKOBP", stocks.get(0).getCompanyName());
 	}

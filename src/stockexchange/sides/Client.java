@@ -3,20 +3,18 @@ package stockexchange.sides;
 import java.util.ArrayList;
 import java.util.List;
 
-import stockexchange.data.impl.BuyRequest;
-import stockexchange.data.impl.SellRequest;
+import stockexchange.model.BuyRequest;
 import stockexchange.model.Investment;
+import stockexchange.model.SellRequest;
 
 public class Client {
 
 	private List<Investment> portfolio = new ArrayList<Investment>();
-	
-	private double money = 10000L;
 	Broker broker = new Broker();
-	
+	private double money;
 	
 	public Client() {
-		
+		this.money = 10000L;
 	}
 
 	public List<Investment> getPortfolio() {

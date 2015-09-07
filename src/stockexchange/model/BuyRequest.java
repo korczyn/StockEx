@@ -1,8 +1,6 @@
-package stockexchange.data.impl;
+package stockexchange.model;
 
-import stockexchange.data.Request;
-
-public class BuyRequest implements Request{
+public class BuyRequest{
 
 	private String companyName;
 	private Long quantity;

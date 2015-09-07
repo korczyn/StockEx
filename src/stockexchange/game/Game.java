@@ -12,14 +12,23 @@ import stockexchange.sides.Client;
 public class Game {
 	
 	public static void main(String[] args){
+		
+//		StockExchange hq = StockExchange.INSTANCE;
+//		Client client = new Client();
+//		GameStrategy strategy = new GameStrategy(hq, client);
+//		
+//		strategy.play();
+		
+		
+		
 		StockExchange hq = StockExchange.INSTANCE;
-		List<Stock> stock = new ArrayList<Stock>();
+		List<Stock> stocks = new ArrayList<Stock>();
 		Client client = new Client();
 		
 		
-		stock = hq.getTodayStockList();
-		for (Stock stock2 : stock) {
-			System.out.println(stock2.toString());
+		stocks = hq.getTodayStockList();
+		for (Stock stock : stocks) {
+			System.out.println(stock.toString());
 		}
 
 		Scanner sc = new Scanner(System.in);
@@ -35,7 +44,7 @@ public class Game {
 				client.orderSellRequest(Integer.parseInt(t[1]), Long.valueOf(t[2]));
 			}
 			if(option.equals("port")){
-				System.out.println("Your investments-------------");
+				System.out.println("-------------Your investments-------------");
 				List<Investment> portfolio = client.getPortfolio();
 				for (Investment investment : portfolio) {
 					System.out.println(investment.toString() + " price now: " + hq.getStockByName(investment.getCompanyName()).getPrice());
@@ -43,8 +52,8 @@ public class Game {
 			}
 			if(option.equals("next")){
 				hq.setNextDay();
-				stock = hq.getTodayStockList();
-				for (Stock stock2 : stock) {
+				stocks = hq.getTodayStockList();
+				for (Stock stock2 : stocks) {
 					System.out.println(stock2.toString());
 				}
 			}

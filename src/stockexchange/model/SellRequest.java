@@ -1,8 +1,6 @@
-package stockexchange.data.impl;
+package stockexchange.model;
 
-import stockexchange.data.Request;
-
-public class SellRequest implements Request{
+public class SellRequest{
 
 	private Long id;
 	private Long quantity;

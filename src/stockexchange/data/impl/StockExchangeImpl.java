@@ -22,11 +22,11 @@ public class StockExchangeImpl implements StockExchange{
 	public StockExchangeImpl(String pathToDataFile){
 		this.stocks = fdr.getListOfAllStocks(pathToDataFile);
 		this.currentDate = dateConverter.stringToDate("20130102");
+		getTodayStockList();
 	}
 	
 	
 	public List<Stock> getTodayStockList(){
-		System.out.println("Today is " + currentDate);
 		todayStocks.clear();
 		for (Stock stock : stocks) {
 			if(stock.getDate().equals(currentDate)){
@@ -47,9 +47,11 @@ public class StockExchangeImpl implements StockExchange{
 		c.add(Calendar.DATE, 1);
 		this.currentDate = c.getTime();
 	}
+	
+	public Date getCurrentDate(){
+		return currentDate;
+	}
 
-
-	@Override
 	public Stock getStockByName(String name) {
 		for (Stock stock : todayStocks) {
 			if(stock.getCompanyName().equalsIgnoreCase(name)){
