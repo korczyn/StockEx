@@ -34,8 +34,8 @@ public class Client {
 		broker.buyStocks(request, this);
 	}
 	
-	public void orderSellRequest(int id, Long quantity){
-		SellRequest request = new SellRequest(Long.valueOf(id), quantity);
+	public void orderSellRequest(Long id, Long quantity){
+		SellRequest request = new SellRequest(id, quantity);
 		broker.sellStocks(request, this);
 	}
 }

@@ -28,16 +28,16 @@ public class Broker {
 	
 	private void chargeClient(double investmentValue, TransactionType t, Client client){
 		if(t.equals(TransactionType.BUY)){
-			client.setMoney(client.getMoney() - investmentValue);
+			client.setMoney(Math.round(client.getMoney() - investmentValue));
 		}
 		if(t.equals(TransactionType.SELL)){
-			client.setMoney(client.getMoney() + investmentValue);
+			client.setMoney(Math.round(client.getMoney() + investmentValue));
 		}
 	}
 	
 	private double getInvestmentValue(double quantity, double price, TransactionType t){
 		double value = quantity * price;
-		double commission = Math.round(value * 0.005);
+		double commission = value * 0.005;
 		if(t.equals(TransactionType.BUY)){
 			System.out.println("Transaction: " + t + " quantity " + quantity + " price " + price + " value " + value + " commission " + commission);
 			return value + commission;

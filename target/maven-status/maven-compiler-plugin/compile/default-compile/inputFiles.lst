@@ -1,0 +1,16 @@
+C:\Users\mkorczyn\workspace\StockExchange\src\stockexchange\data\impl\StockExchangeImpl.java
+C:\Users\mkorczyn\workspace\StockExchange\src\stockexchange\utils\DateConverter.java
+C:\Users\mkorczyn\workspace\StockExchange\src\stockexchange\utils\ListUtils.java
+C:\Users\mkorczyn\workspace\StockExchange\src\stockexchange\sides\Broker.java
+C:\Users\mkorczyn\workspace\StockExchange\src\stockexchange\game\GameStrategy.java
+C:\Users\mkorczyn\workspace\StockExchange\src\stockexchange\model\Stock.java
+C:\Users\mkorczyn\workspace\StockExchange\src\stockexchange\model\TransactionType.java
+C:\Users\mkorczyn\workspace\StockExchange\src\stockexchange\game\Game.java
+C:\Users\mkorczyn\workspace\StockExchange\src\stockexchange\model\Status.java
+C:\Users\mkorczyn\workspace\StockExchange\src\stockexchange\sides\Client.java
+C:\Users\mkorczyn\workspace\StockExchange\src\stockexchange\model\Investment.java
+C:\Users\mkorczyn\workspace\StockExchange\src\stockexchange\utils\FileDataReader.java
+C:\Users\mkorczyn\workspace\StockExchange\src\stockexchange\model\BuyRequest.java
+C:\Users\mkorczyn\workspace\StockExchange\src\stockexchange\model\SellRequest.java
+C:\Users\mkorczyn\workspace\StockExchange\src\stockexchange\data\StockExchange.java
+C:\Users\mkorczyn\workspace\StockExchange\src\stockexchange\model\MeanPrice.java
