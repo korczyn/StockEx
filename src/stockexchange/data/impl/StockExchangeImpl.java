@@ -2,7 +2,9 @@ package stockexchange.data.impl;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import stockexchange.data.StockExchange;
@@ -12,7 +14,7 @@ import stockexchange.utils.FileDataReader;
 
 public class StockExchangeImpl implements StockExchange{
 
-	private List<Stock> stocks = new ArrayList<Stock>();
+	private HashMap<Date, Collection<Stock>> stocks = new HashMap<Date, Collection<Stock>>();
 	private List<Stock> todayStocks = new ArrayList<Stock>();
 	private FileDataReader fdr = new FileDataReader();
 	private DateConverter dateConverter = new DateConverter();
@@ -20,22 +22,17 @@ public class StockExchangeImpl implements StockExchange{
 	private Date currentDate;
 	
 	public StockExchangeImpl(String pathToDataFile){
-		this.stocks = fdr.getListOfAllStocks(pathToDataFile);
+		this.stocks = fdr.getMapOfAllStocks(pathToDataFile);
 		this.currentDate = dateConverter.stringToDate("20130102");
 		getTodayStockList();
 	}
 	
 	
 	public List<Stock> getTodayStockList(){
-		todayStocks.clear();
-		for (Stock stock : stocks) {
-			if(stock.getDate().equals(currentDate)){
-				todayStocks.add(stock);
-			}
-		}
+		todayStocks = (ArrayList<Stock>) stocks.get(currentDate);
 		
-		if(todayStocks.size() == 0){
-			System.out.println("Stock Exchange is closed today");
+		if(todayStocks == null){
+			todayStocks = new ArrayList<Stock>();
 		}
 		
 		return todayStocks;

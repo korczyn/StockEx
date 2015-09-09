@@ -1,4 +1,4 @@
-package stockexchange.model;
+package stockexchange.enums;
 
 public enum Status {
 	OK, FAIL

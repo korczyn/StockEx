@@ -3,14 +3,14 @@ stockexchange\model\Stock.class
 stockexchange\data\StockExchange.class
 stockexchange\sides\Broker.class
 stockexchange\game\Game.class
-stockexchange\model\Status.class
 stockexchange\sides\Client.class
 stockexchange\utils\ListUtils.class
-stockexchange\model\TransactionType.class
+stockexchange\enums\Status.class
+stockexchange\utils\Stats.class
 stockexchange\model\BuyRequest.class
+stockexchange\enums\TransactionType.class
 stockexchange\model\SellRequest.class
 stockexchange\utils\FileDataReader.class
 stockexchange\data\impl\StockExchangeImpl.class
 stockexchange\model\Investment.class
-stockexchange\game\GameStrategy.class
 stockexchange\utils\DateConverter.class

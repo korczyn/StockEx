@@ -1,4 +1,4 @@
-package stockexchange.utils;
+package stockexchange.model;
 
 public class Stats {
 	private double maxMoney;

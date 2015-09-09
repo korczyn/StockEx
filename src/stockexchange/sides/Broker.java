@@ -5,12 +5,12 @@ import java.util.Iterator;
 import java.util.List;
 
 import stockexchange.data.StockExchange;
+import stockexchange.enums.Status;
+import stockexchange.enums.TransactionType;
 import stockexchange.model.BuyRequest;
 import stockexchange.model.Investment;
 import stockexchange.model.SellRequest;
-import stockexchange.model.Status;
 import stockexchange.model.Stock;
-import stockexchange.model.TransactionType;
 import stockexchange.utils.ListUtils;
 
 public class Broker {
@@ -26,7 +26,7 @@ public class Broker {
 		}
 	}
 	
-	private void chargeClient(double investmentValue, TransactionType t, Client client){
+	protected void chargeClient(double investmentValue, TransactionType t, Client client){
 		if(t.equals(TransactionType.BUY)){
 			client.setMoney(Math.round(client.getMoney() - investmentValue));
 		}

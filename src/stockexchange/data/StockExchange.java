@@ -1,5 +1,6 @@
 package stockexchange.data;
 
+import java.util.Date;
 import java.util.List;
 
 import stockexchange.data.impl.StockExchangeImpl;
@@ -12,5 +13,6 @@ public interface StockExchange {
 	public List<Stock> getTodayStockList();
 	public void setNextDay();
 	public Stock getStockByName(String name);
+	public Date getCurrentDate();
 }
 

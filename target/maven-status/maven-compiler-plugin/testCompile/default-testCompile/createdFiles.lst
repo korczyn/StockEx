@@ -1,4 +1,5 @@
 stockexchange\utils\ListUtilsTest.class
 stockexchange\data\impl\StockExchangeImplTest.class
+stockexchange\sides\BrokerTest.class
 stockexchange\utils\DateConverterTest.class
 stockexchange\utils\FileReaderTest.class
