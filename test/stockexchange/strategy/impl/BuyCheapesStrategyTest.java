@@ -1,4 +1,4 @@
-package stockexchange.strategy;
+package stockexchange.strategy.impl;
 
 import static org.junit.Assert.*;
 
@@ -13,6 +13,7 @@ import stockexchange.data.impl.StockExchangeImpl;
 import stockexchange.model.Investment;
 import stockexchange.model.Stock;
 import stockexchange.sides.Client;
+import stockexchange.strategy.impl.BuyCheapestStrategy;
 
 public class BuyCheapesStrategyTest {
 
@@ -24,7 +25,7 @@ public class BuyCheapesStrategyTest {
 	public void setUp(){
 		se = new StockExchangeImpl("C:\\Users\\mkorczyn\\Desktop\\ZadanieGielda\\ZadanieGielda\\testData.csv");
 		client = new Client();
-		strategy = new BuyCheapestStrategy(se, client);
+		strategy = new BuyCheapestStrategy(se, client, 1.00);
 	}
 	
 	@Test

@@ -2,7 +2,7 @@ package stockexchange.game;
 
 import stockexchange.data.StockExchange;
 import stockexchange.sides.Client;
-import stockexchange.strategy.BuyCheapestStrategy;
+import stockexchange.strategy.impl.BuyCheapestStrategy;
 
 public class Game {
 	
@@ -10,8 +10,7 @@ public class Game {
 		
 		StockExchange hq = StockExchange.INSTANCE;
 		Client client = new Client();
-		
-		BuyCheapestStrategy strategy = new BuyCheapestStrategy(hq, client);
-		strategy.play();
+		client.setStrategy(new BuyCheapestStrategy(hq, client, 1.10));
+		client.strategyStart();
 	}
 }

@@ -1,4 +1,4 @@
-package stockexchange.strategy;
+package stockexchange.strategy.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,18 +8,21 @@ import stockexchange.model.Investment;
 import stockexchange.model.Stats;
 import stockexchange.model.Stock;
 import stockexchange.sides.Client;
+import stockexchange.strategy.Strategy;
 
-public class BuyCheapestStrategy {
+public class BuyCheapestStrategy implements Strategy{
 
 	private StockExchange se;
 	private Client client;
+	private double profitPercent;
 	private List<Stock> stocks = new ArrayList<Stock>();
 	private int daysClosed = 0;
 	Stats stats = new Stats();
 
-	public BuyCheapestStrategy(StockExchange se, Client client) {
+	public BuyCheapestStrategy(StockExchange se, Client client, double profitPercent) {
 		this.se = se;
 		this.client = client;
+		this.profitPercent = profitPercent;
 	}
 
 	public Stock getCheapest(List<Stock> list) {
@@ -85,7 +88,7 @@ public class BuyCheapestStrategy {
 			System.out.println(se.getCurrentDate());
 			daysClosed = 0;
 			stats.maxMoney(client.getMoney());
-			sellAllWithPercentageProfit(1.14);
+			sellAllWithPercentageProfit(profitPercent);
 			stats.maxMoney(client.getMoney());
 			buyMaxOfCheapestStock(stocks, client.getMoney());
 			stats.maxMoney(client.getMoney());
